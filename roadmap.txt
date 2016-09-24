@@ -1,0 +1,37 @@
+Phase 1: I'll make my own Zorklike -- with Blackjack!
+
+Tools needed:
+    User input in => 
+            readline
+            parsing/validation (match input with command)
+    Internal Game state Representation =>
+            'Card' object/class
+                    Shuffle, Deal, Compare, Sum
+            Deck/Discard Pile/Hand objects?
+    User Information Display out =>
+            Game State
+            Command Options
+                    game commands, ui commands
+            Result of input parsing
+                    errors, game state changes
+    Persistence
+            Ability to save/load game state to/from a file
+    
+
+
+Step1:
+    Make a simple game loop:
+        display welcome text
+        loop:
+        calls "play game" function
+            creates 'sum' 0
+            displays sum, asks hit or stand
+            reads text from user until matches valid command
+            executes command:
+                hit: gen random number 1-10, add it to sum
+                    if sum > 21, game over
+                stand: game over
+        when game over, asks user play again/quit.
+        If play again, restart loop.
+        If not, display goodbye text
+            
