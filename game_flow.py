@@ -9,13 +9,16 @@ import io_user
 # Also, currently no way to win, no opponent or anything
 def play_game():
     game_score = 0
-    valid_list = ["hit", "stand"]
+    valid_list = ["hit", "stand", "cheat"]
     while True:
         io_user.display("Your current score is %d"% game_score)
         command = io_user.get_command(valid_list)
         if command == "stand":
             io_user.display("You stand at %d" % game_score)
             return
+        elif command == "cheat":
+            game_score=int(input("What would you like your score to be?"))
+            io_user.display("You've changed your score to %d"% game_score)
         else:
             val = 5 # todo randomize
             io_user.display("You are dealt a %d"% val)
