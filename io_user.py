@@ -28,7 +28,7 @@ def get_int():
         user_input = input("Value: ")
         try:
             val = int(user_input) # I still don't quite trust int(x) as a conversion tool, but it seems the way to go
-        except:
+        except ValueError:
             print("Please enter a valid number!")
         else:
             return val
